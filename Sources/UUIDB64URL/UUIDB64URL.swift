@@ -29,7 +29,7 @@ public extension UUID {
     init?(base64url: String) {
         var b: [UInt8]
         do {
-            b = try Base64.decode(string: base64url)
+            b = try Base64.decode(string: base64url, options: [.base64UrlAlphabet,.omitPaddingCharacter])
         } catch {
             return nil
         }
